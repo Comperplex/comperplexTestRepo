@@ -1,7 +1,9 @@
-a = 1
-b = 1
-maxValue = 2000
+def fib(n):
+	fibN = []
+	a, b, = 1, 1
+	for n in range(n):
+		a, b = b, a+b
+		fibN.append(a)
+	return fibN
 
-while b < maxValue:
-	a, b = b, a+b
-	print(a)
+print(fib(10))
