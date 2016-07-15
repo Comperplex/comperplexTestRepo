@@ -1,4 +1,5 @@
 from collections import deque
+import PackageTest.OwensModule as owenMod
 
 a = list(range(10))
 print(a)
@@ -83,3 +84,18 @@ print(robots.keys())
 
 dictComp = {x: x + 5 for x in range(5)} #Dictionaries have comprehensions too
 print(dictComp)
+
+aList = ['one', 'two', 'three', 'four']
+for i, v in enumerate(aList):
+	print('the index is {0} and the value is {1}'.format(i, v))
+
+for f in sorted(aList): #Sorted does not change the original list, unlike "sort()"
+	print(f)
+
+for f in reversed(aList):
+	print(f)
+
+if([1, 2, 3] > [1, 1, 100]): #Lists can be compared, but they are compared lexicographically, as in this example here.
+	print('Yes')
+
+print(owenMod.appendOwenToString('Who\'s a genius programmer? it\'s '))
