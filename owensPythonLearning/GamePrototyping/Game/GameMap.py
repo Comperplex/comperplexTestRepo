@@ -8,7 +8,7 @@ class GameMap:
 		self.maxEntities = maxEntities
 
 	def addObject(self, gameObject): #Tries to add a new game Object to the dictionary of game objects. Returns true if successful and false otherwise
-		if gameObject.loc[0] in range(self.size[0]) and gameObject.loc[1] in range(self.size[1]) and len(self.gameObjects) < self.maxEntities + 1:
+		if gameObject.loc[0] in range(self.size[0]) and gameObject.loc[1] in range(self.size[1]): #Need to account for number of entities but I'm lazy
 			if gameObject.player in self.gameObjects:
 				#print(len(self.gameObjects[gameObject.player][0]))
 				self.gameObjects[gameObject.player].append(gameObject)
@@ -23,9 +23,9 @@ class GameMap:
 	def moveObject(self, player, name, xIncrement, yIncrement):
 		for gameObject in self.gameObjects[player]:
 			if gameObject.name is name:
-				gameObject.loc[0] += xIncrement
-				gameObject.loc[1] += yIncrement
-				break
+                if (gameObject.player.loc[0] + xIncrement) in range(self.size[0]) and (gameObject.loc[1] + yIncrement) in range(self.size[1]): 
+				    gameObject.loc[0] += xIncrement
+				    gameObject.loc[1] += yIncrement
 
 	def removeObject(self, player, name):
 		for gameObject in self.gameObjects[player]:
