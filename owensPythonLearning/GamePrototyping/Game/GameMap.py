@@ -10,8 +10,8 @@ class GameMap:
 	def addObject(self, gameObject): #Tries to add a new game Object to the dictionary of game objects. Returns true if successful and false otherwise
 		if gameObject.loc[0] in range(self.size[0]) and gameObject.loc[1] in range(self.size[1]) and len(self.gameObjects) < self.maxEntities + 1:
 			if gameObject.player in self.gameObjects:
-				currentPlayerObjects = self.gameObjects[gameObject.player]
-				self.gameObjects[gameObject.player] = self.gameObjects[gameObject.player].append(gameObject)
+				#print(len(self.gameObjects[gameObject.player][0]))
+				self.gameObjects[gameObject.player].append(gameObject)
 				#If the object dict contains objects from this player already, add this new object to the list
 			else:
 				self.gameObjects[gameObject.player] = [gameObject]

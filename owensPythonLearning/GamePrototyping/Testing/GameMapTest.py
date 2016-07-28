@@ -24,6 +24,7 @@ class TestGameMap(unittest.TestCase):
 
 		dupeGameObject = GameObject([0,0], 'beacon', 'owen')
 		self.assertTrue(gameMap.addObject(dupeGameObject))
+		self.assertEqual(len(gameMap.gameObjects['owen']), 2)
 
 if __name__ == '__main__':
 	unittest.main()
