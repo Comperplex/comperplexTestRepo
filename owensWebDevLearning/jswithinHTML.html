@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html>
+	<head> <!-- js Code that should be called on a certain evet should go in the head -->
+		<title>
+			Owen's JS test page
+		</title>
+
+		<script type="text/javascript">
+			function sayHello(){
+				alert("Hello World"); //Alert creates a dialog box
+			}
+		</script>
+	</head>
+
+	<body> <!-- js code that should run as the page loads should go in the body -->
+		<script language="javascript" type="text/javascript">
+			document.write("Hello World ");
+
+			//Variable declarations:
+			var testVar = 1;
+			document.write(testVar)
+		</script>
+
+		<noscript> <!-- noscript is called if the browser does not support JS? -->
+			Sorry... JavaScript is necesssary to proceed.
+		</noscript>
+
+		<input type="button" onclick="sayHello()" value="Say Hello" />
+	</body>
+</html>
